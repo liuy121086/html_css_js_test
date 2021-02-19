@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<style type="text/css">
+	div{
+		height:20px;
+		background: #bfa;
+	}
+</style>
+<div>1</div>
+<div>2</div>
+
+<script type="text/javascript">
+
+let fun = () => console.log('hello');
+fun();
+let fun1 = (i,j) => {console.log('hello',i,j);};
+fun1("ssss",'LLl');
+let fun2 = (i,j) => {
+	console.log(this,i+j);
+	i + j;
+}
+var v = fun2(11,22);
+console.log(v);
+let obj={
+	a(){
+		let divs = document.getElementsByTagName('div');
+		divs[0].onclick = ()=>console.log(this);
+		divs[1].onclick =()=>{
+			console.log(this);
+		}
+	}	
+}
+obj.a();
+
+
+function fun3(){
+	console.log("fun3");
+}
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

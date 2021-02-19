@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<style type="text/css">
+	.clock{
+		width:100px;
+		height:100px;
+		border:1px solid black;
+		border-radius: 50%;
+		position: relative;
+	}
+
+	.s{
+		width:1px;
+		height:50px;
+		background-color: red;
+		margin: 0px auto;
+
+	}
+
+	.m{
+		width:2px;
+		height:40px;
+		background-color: black;
+		margin: 10px auto;
+
+	}
+
+	.h{
+		width:3px;
+		height:30px;
+		background-color: black;
+		margin: 20px auto;
+	}
+
+	.s_wrapper,
+	.m_wrapper,
+	.h_wrapper{
+		position: absolute;
+		width:100px;
+		height:100px;
+		top:0;
+		bottom: 0;
+		left:0;
+		right:0;
+		margin: auto;
+		animation-name: run;
+		animation-iteration-count: infinite;
+	}
+
+	.s_wrapper{
+		animation-duration: 60s;
+		animation-timing-function: steps(60);
+	}
+
+	.m_wrapper{
+		animation-duration: 3600s;
+		animation-timing-function: steps(60);
+	}
+
+	.h_wrapper{
+		animation-duration: 216000s;
+		animation-timing-function: steps(60);
+	}
+	
+	@keyframes run{
+		from{
+			transform: rotateZ(0);
+		}
+		to{
+			transform: rotateZ(360deg);
+		}
+	}
+
+</style>
+
+
+<div class="clock">
+	<div class="s_wrapper">
+		<div class="s">
+		</div>
+	</div>
+	<div class="m_wrapper">
+		<div class="m">
+		</div>
+	</div>
+	<div class="h_wrapper">
+		<div class="h">
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>

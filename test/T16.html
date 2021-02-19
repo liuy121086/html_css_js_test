@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+function foo(data){
+	console.log(this,data);
+}
+
+function foo1(){
+	console.log(1111111);
+};
+// foo.call(foo1,"ssssss");
+// foo.apply(foo1,["sssss"]);
+// var bar = foo.bind(foo1);
+// bar("fff");
+// console.log(bar);
+
+var foo2 = function(){
+	console.log(this);
+}.bind(foo1)();
+
+
+
+</script>
+</body>
+</html>

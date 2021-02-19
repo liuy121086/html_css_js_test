@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<style type="text/css">
+	.card .f{
+		position: absolute;
+		width:70px;
+		height:100px;
+		background-image: url(./b.jpg);
+		background-size: 70px 100px;
+		backface-visibility: hidden;
+		transition: transform 2s;
+		z-index: 100;
+		background-color: #abc;
+	}
+	.card .b{
+		width:70px;
+		height:100px;
+		background-image: url(./f.jpg);
+		background-size: 70px 100px;
+		transform: rotateY(180deg);
+		background-color: red;
+		transition: transform 2s;
+		background-color: #abc;
+	}
+	.card{
+		transform-style: preserve-3d;
+		width:70px;
+		height:70px;
+		transition: transform 2s;
+	}
+	.card:hover{
+		transform: rotateY(180deg);
+	}
+
+</style>
+<div class="card">
+	<div class="f">
+	</div>
+	<div class="b">
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+let obj1 = {};
+let obj2=obj1;
+console.log(Object.is(0,-0));
+
+console.log(0=='-0');
+console.log(NaN==NaN);
+
+console.log(Object.is(NaN,NaN));
+
+let obj3 = {};
+let obj4 ={f:111}
+let obj5 ={x:111}
+let f = Object.assign(obj3,obj4,obj5);
+
+console.log(obj3);
+
+let obj6 ={};
+obj6.__proto__=obj3;
+console.log(obj6.f);
+
+</script>
+
+</body>
+</html>

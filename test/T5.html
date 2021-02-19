@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<style type="text/css">
+
+*{
+	margin:0px;
+	padding:0px;>
+}
+ul{
+	list-style:none;
+}
+a{
+	text-decoration: none;
+	display:block;
+}
+body{
+	background-color: #f4f4f4;
+}
+
+.wapper{
+	top:100px;
+	width:600px;
+	height:400px;
+	position: relative;
+	margin:0 auto;
+	box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.item1,
+.item2,
+.item3,
+.item4,
+.item5,
+.item6{
+	position: absolute;
+	z-index: 0;
+
+}
+
+.item1 a{
+	width:600px;
+	height:400px;
+	background-size: 600px 400px;
+	background-image: url(./imgs/01.jpg);
+}
+.item2 a{
+	width:600px;
+	height:400px;
+	background-size: 600px 400px;
+	background-image: url(./imgs/02.jpg);
+}
+.item3 a{
+	width:600px;
+	height:400px;
+	background-size: 600px 400px;
+	background-image: url(./imgs/03.jpg);
+}
+.item4 a{
+	width:600px;
+	height:400px;
+	background-size: 600px 400px;
+	background-image: url(./imgs/04.jpg);
+
+}
+.item5 a{
+	width:600px;
+	height:400px;
+	background-size: 600px 400px;
+	background-image: url(./imgs/05.jpg);
+}
+.item6 a{
+	width:600px;
+	height:400px;
+	background-size: 600px 400px;
+	background-image: url(./imgs/06.jpg);
+}
+
+.link{
+	position: absolute;
+	bottom: 0px;
+	left:0px;
+	z-index: 10000;
+	line-height: 20px;
+	height:20px;
+	font-size: 0px;
+}
+
+.link a{
+	display: inline-block;
+	line-height: 20px;
+	width:10px;
+	height:10px;
+	border-radius: 50%;
+	background-color: rgba(0,0,0,0.3);
+	margin:5px;
+}
+
+.link .l{
+	margin:0px;
+	border-style: solid;
+	border-width: 5px;
+	border-color: rgba(0,0,0,0.3);
+	background-color: #fff;
+}
+
+</style>
+
+<ul class="wapper">
+	<li class="item1">
+		<a href="javascript:void(0);"></a>
+	</li>
+	<li class="item2">
+		<a href="javascript:void(0);"></a>
+	</li>
+	<li class="item3">
+		<a href="javascript:void(0);"></a>
+	</li>
+	<li class="item4">
+		<a href="javascript:void(0);"></a>
+	</li>
+	<li class="item5">
+		<a href="javascript:void(0);"></a>
+	</li>
+	<li class="item6">
+		<a href="javascript:void(0);"></a>
+	</li>
+	<div class="link">
+		<a href="javascript:void(0);"></a>
+		<a href="javascript:void(0);"></a>
+		<a href="javascript:void(0);"></a>
+		<a href="javascript:void(0);"></a>
+		<a href="javascript:void(0);"></a>
+		<a href="javascript:void(0);"></a>
+	</div>
+</ul>
+
+<script type="text/javascript">
+
+(function(){
+
+	var wapper = document.getElementsByTagName("ul")[0];
+	var items = wapper.childNodes;
+	var itemsNew=[];
+	for(var item in items){
+		if(items[item].nodeType=='1'){
+			if("link" != items[item].getAttribute("class")){
+				itemsNew.push(items[item]);
+			}
+		}
+	}
+	
+	var showIndex=0;
+	var timer=setInterval(function(){
+			show(null,showIndex);
+			showIndex++;
+			showIndex = showIndex>=linksNew.length?0:showIndex;
+	},2000);	
+
+	var link = document.getElementsByTagName("div")[0];
+	var links = link.childNodes;
+	var linksNew = [];
+	var i=0;
+	for(var a in links){
+		if(links[a].nodeType=='1'){
+			(function(i){
+				links[a].addEventListener('mouseover',function(event){
+					show(event,i);
+				},false);
+				linksNew.push(links[a]);
+			}(i++));
+		}
+	}
+
+	show(null,0);
+
+	function show(event,i){
+		for(var j =0;j<itemsNew.length;j++){
+			itemsNew[j].style.zIndex=0;
+			linksNew[j].removeAttribute("class");
+		}
+		linksNew[i].setAttribute("class","l");
+		itemsNew[i].style.zIndex=1;
+		showIndex=i;
+	}
+
+}());
+
+</script>
+
+</body>
+</html>

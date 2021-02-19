@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<style type="text/css">
+*{
+	margin:0px;
+	padding:0px;
+}
+ul{
+	list-style:none;
+}
+a{
+	text-decoration: none;
+}
+body{
+	background-color: #f4f4f4;
+}
+
+.clearfix::after{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.wapper{
+	width:592px;
+	height:180px;
+	padding-top: 20px;
+}
+
+.wapper .img{
+	background-image: url(news1.jpg);
+	width:272px;
+	height:153px;
+	background-size: 272px 153px;
+	float:left;
+	border-radius: 12px;
+	margin-right: 20px;
+}
+
+.wapper .title{
+	margin-bottom: 20px;
+	
+}
+
+.wapper .title a{
+	text-decoration:underline;
+	color: #f73131;
+	font:20px/21px Arial,sans-serif;
+	line-height: 30px;
+}
+
+.wapper .news{
+	margin: 5px 0 0;
+	color: #333;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+</style>
+
+<div class="wapper">
+	<div class="img"></div>
+	<h3 class="title "><a href="javascript:void();">张文宏称艾滋病比新冠更狡猾</a></h3>
+	<p class="news">
+	艾滋病病毒和新冠病毒相比，哪个更狡猾？张文宏说：“当免疫细胞低到一定程度后，所有的艾滋病症状就会出来，最狡猾的病... <a href="javascript:void();">详细 ></a>
+	</p>
+</div>
+
+</body>
+</html>

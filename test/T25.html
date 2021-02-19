@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+function* myG(){
+	console.log("start---");
+	let result = yield "aaa";
+	console.log('result',result);
+	yield "bbb";
+}
+
+let MG = myG();
+MG.next(); 
+MG.next("sssabc");
+
+// async function asyncFoo(){
+// 	console.log("start");
+// 	let result = await Promise.reject("fff");
+// 	console.log("start->>a",result);
+// 	await "b";
+// 	console.log("start->>a->>b");
+// }
+//  asyncFoo();
+
+
+
+ ////////////////////////////////
+ 
+
+ class ABC{
+ 	constructor(name,age){
+ 		this.name=name;
+ 		this.age=age;
+ 	}
+
+ 	getName(){
+ 		console.log(this.name,this.age);
+ 	}
+ }
+
+
+class CABC extends ABC{
+	constructor(name,age,sal){
+		super(name,age);
+		this.x = sal;
+	}
+
+	getName(){
+		console.log(this.name,this.age,this.x);
+	}
+}
+
+let abc = new CABC("aaa",'bbb',11111);
+console.log(abc);
+abc.getName();
+
+
+
+///////////////////////////////
+
+
+let str = "2222_";
+console.log(str.includes('<'));
+
+console.log(str.startsWith('d'));
+
+console.log(str.endsWith('b'));
+
+console.log(str.repeat(3));
+
+///////////////////////////////
+
+let num = 10;
+console.log(Number.isFinite(Infinity));
+
+console.log(Number.isNaN(NaN));
+
+console.log(Number.isInteger(8.0));
+
+console.log(Number.parseInt("ff"));
+
+console.log(Math.trunc(4434234333.33));
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

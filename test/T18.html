@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+let obj = {uname :"u",uage:40};
+console.log(obj.uname);
+let {uage}=obj;
+console.log(uage);
+
+
+let arr = [1,2,3,4,5,6];
+let [,,,a,b,c]=arr;
+console.log(a,b,c);
+
+function foo({uname,uage}){
+	console.log(uname,uage);
+}
+
+foo(obj);
+
+</script>
+</body>
+</html>

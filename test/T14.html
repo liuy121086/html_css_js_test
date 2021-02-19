@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+// "use strict";
+
+var obj = {m:"sss"};
+var obj1 = Object.create(obj,{
+	sex:{
+		value:'male',
+		writable:true,
+		configurable:true,
+		interable:true,
+		enumerable:true
+	}
+});
+
+Object.defineProperties(obj1,{
+	fullName:{
+		get:function(){
+			console.log("get()");
+			return this.m +" --- ";
+		},
+		set:function(data){
+			console.log("set"+"  "+data);
+			this.fullName1=data;
+		}
+	}
+});
+
+var obj3 = {
+	firstName:"fn",
+	lastName:"ln",
+	get fullName(){
+		return this.firstName+"--"+this.lastName;
+	},
+	set fullName(fullName){
+		var name = fullName.split(" ");
+		this.firstName=name[0];
+		this.lastName=name[1];
+	}
+};
+
+console.log(obj3);
+console.log(obj3.fullName);
+obj3.fullName="abc def;";
+console.log(obj3.fullName);
+
+
+
+</script>
+
+</body>
+</html>

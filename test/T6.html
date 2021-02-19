@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<style type="text/css">
+*{
+	margin:0px;
+	padding:0px;>
+}
+ul{
+	list-style:none;
+}
+a{
+	text-decoration: none;
+}
+body{
+	background-color: #f4f4f4;
+}
+
+clearfix::before,
+clearfix::after{
+	content: '';
+	display: table;
+	clear:both;
+}
+
+.wapper  .item .red{
+	color:#ff0000;
+}
+
+.wapper{
+	width:990px;
+	height:30px;
+	background-color: #e3e4e5;
+	font:12px/1.5 Microsoft YaHei,Heiti SC,tahoma,arial,Hiragino Sans GB,"\5B8B\4F53",sans-serif;
+	margin:10px auto;
+}
+
+.wapper .location{
+	float:left;
+}
+
+.wapper .menu{
+	float:right;
+}
+
+.wapper .menu .item{
+	float:left;
+}
+
+.wapper .item a{
+	color:#999999;
+	line-height: 30px;
+	text-align: center;
+	padding:7px;
+}
+
+.wapper .item a:hover{
+	color:#ff0000;
+}
+
+.wapper .menu .item i{
+	margin: 0 5px;
+	font-style: normal;
+	line-height: 30px;
+	color: #ddd;
+}
+
+.wapper .location .item{
+	position: relative;
+}
+
+.wapper .location .message{
+	width:300px;
+	height:auto;
+	background-color: #fff;
+	display:none;
+	border:1px solid #ddd;
+	position: absolute;
+	top:29px;
+}
+
+.wapper .location a{
+	position:relative;
+	z-index: 9999;
+}
+
+.wapper .location .item:hover .message{
+	display:block;
+	box-shadow: 0 0 -1px rgba(0,0,0,0.3);
+}
+
+.wapper .location:hover .item a{
+	color:#ff0000;
+	background-color: #fff;
+	border:1px solid #ddd;
+	border-bottom: none;
+}
+
+.wapper .menu .item:last-child{
+	position: relative;
+}
+
+.wapper .menu .item:last-child .pointer{
+	width:0px;
+	height:0px;
+	border:5px solid #fff;
+	border-color: transparent transparent #fff transparent;
+	position: absolute;
+	left: 0;
+	right:0;
+	top:20px;
+	margin:0 auto;
+	display: none;
+	z-index: 9999;
+}
+
+.wapper .menu .item:last-child .message_jdsj{
+	position: absolute;
+	width:200px;
+	height:300px;
+	display: none;
+	background-color: #fff;
+	border:1px solid #ddd;
+	top:29px;
+	right:0px;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+}
+
+.wapper .menu .item:last-child:hover .pointer,
+.wapper .menu .item:last-child:hover .message_jdsj{
+	display: block;
+}
+
+.wapper .location .item .message .imglist .item1{
+	width:300px;
+	height:200px;
+	background-size: 300px 200px;
+	background-image: url(./imgs/01.jpg);
+	margin: 7px auto;
+}
+
+.wapper .location .item .message .imglist .item2{
+	width:300px;
+	height:200px;
+	background-size: 300px 200px;
+	background-image: url(./imgs/02.jpg);
+	margin: 7px auto;
+}
+
+.wapper .location .item .message .imglist .item3{
+	width:300px;
+	height:200px;
+	background-size: 300px 200px;
+	background-image: url(./imgs/03.jpg);
+	margin: 7px auto;
+}
+</style>
+
+<div class="wapper">
+	<ul class="location">
+		<li class="item">
+			<a class="red" href="javascript:void(0);">辽宁</a>
+			<div class="message">
+				<ul class="imglist">
+					<li class="item1"></li>
+					<li class="item2"></li>
+				
+				</ul>
+			</div>
+		</li>
+	</ul>
+	<ul class="menu">
+		<li class="item"><a href="javascript:void(0);">您好，请登录</a></li>
+		<li class="item"><a class="red" href="javascript:void(0);">免费注册</a></li>
+		<li class="item"><i class="line">|</i></li>
+		<li class="item"><a href="javascript:void(0);">我的订单</a></li>
+		<li class="item"><i class="line">|</i></li>
+		<li class="item"><a href="javascript:void(0);">我的京东</a></li>
+		<li class="item"><i class="line">|</i></li>
+		<li class="item"><a href="javascript:void(0);">京东会员</a></li>
+		<li class="item"><i class="line">|</i></li>
+		<li class="item"><a class="red" href="javascript:void(0);">企业采购</a></li>
+		<li class="item"><i class="line">|</i></li>
+		<li class="item"><a href="javascript:void(0);">客户服务</a></li>
+		<li class="item"><i class="line">|</i></li>
+		<li class="item"><a href="javascript:void(0);">网站导航</a></li>
+		<li class="item"><i class="line">|</i></li>
+		<li class="item">
+			<a href="javascript:void(0);">手机京东</a>
+			<div class="pointer">
+			</div>
+			<div class="message_jdsj">
+
+			</div>
+		</li>
+	</ul>
+</div>
+
+
+</body>
+</html>

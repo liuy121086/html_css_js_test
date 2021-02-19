@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+</head>
+<body>
+
+<script type="text/javascript">
+
+
+function send(){
+	let p = new Promise(function(resove,reject){
+	
+	console.log(1111);
+
+	setTimeout(() => {
+		console.log(30000);
+		resove('{"q":"111111","p":false,"g":[{"type":"sug","sa":"s_1","q":"111111是什么意思?"},{"type":"sug","sa":"s_2","q":"1111111×1111111等于多少"},{"type":"sug","sa":"s_3","q":"111111十进制"},{"type":"sug","sa":"s_4","q":"1111111打一成语"},{"type":"sug","sa":"s_5","q":"11111101转化为十进制"},{"type":"sug","sa":"s_6","q":"11111111转化为十进制"},{"type":"sug","sa":"s_7","q":"11111111的补码"},{"type":"sug","sa":"s_8","q":"1111111是什么成语"},{"type":"sug","sa":"s_9","q":"1111111111的十进制"},{"type":"sug","sa":"s_10","q":"11111110转化成十进制"}],"slid":"16953018309540492865","queryid":"0x123854e2dab641"}');
+	},2000);
+	
+
+	});
+
+	return p;
+}
+
+
+
+
+
+console.log(222);
+send()
+	.then(function(data){
+		let g = JSON.parse(data).g;
+		console.log(g[0].q);
+		return send();
+
+	},function(){
+
+	})
+	.then(function(data){
+		let g = JSON.parse(data).g;
+		console.log(g[1].q);
+		
+	},function(){
+
+	});
+
+console.log("------------");
+
+let symbol = Symbol("s");
+console.log(symbol);
+
+
+</script>
+
+
+</body>
+</html>

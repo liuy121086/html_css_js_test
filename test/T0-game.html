@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<ul>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	
+	<div class="snake"></div>
+</ul>
+
+<style type="text/css">
+
+*{
+	margin:0px;
+	padding:0px;
+}
+
+ul{
+	position:absolute;
+	height:50px;
+	width:50px;
+	left:50%;
+	top:50%;
+	margin-left:-25px;
+	margin-top:-25px;
+	border:1px solid black;
+}
+
+ul li{
+	height:8px;
+	width:8px;
+	float:left;
+	border:1px solid black;
+	background-color:green;
+	list-style:none;
+	display:block;
+}
+ul li::after{
+	content:"";
+	clear:both;
+	display:inline-block;
+}
+
+.snake{
+	position:absolute;
+	left:0px;
+	top:0px;
+	background-color:red;
+	height:8px;
+	width:8px;
+	border:1px solid black;
+}
+
+.food{
+	position:absolute;
+	left:0px;
+	top:0px;
+	background-color:yellow;
+	height:8px;
+	width:8px;
+	border:1px solid black;
+}
+
+
+</style>
+
+<script type="text/javascript">
+
+
+var S = (function(){
+	var ul = document.getElementsByTagName('ul')[0];
+	var head = document.getElementsByClassName('snake')[0];
+	var snakeArr = [];
+	var posArr =[];
+	var target;
+	var food;
+	head.currentPos = [0,0];
+	snakeArr.push(head);
+	
+	var timer = setInterval(createFood,500);
+	var timer2;
+	//createFood();
+	function createFood(){
+		if(food){
+			return;
+		}
+		var areaSpace=[];
+		for(var x=0;x<5;x++){
+			for(var y=0;y<5;y++){
+				areaSpace.push([x,y]);
+			}
+		}
+		
+		var index = parseInt(Math.random()*areaSpace.length);
+		food = document.createElement('div');
+		food.setAttribute("class","food");
+		food.currentPos=[areaSpace[index][0],areaSpace[index][1]];
+		ul.appendChild(food);
+		drawNode(food,food.currentPos);
+		
+		for(var i=0;i<snakeArr.length;i++){
+			if(food.currentPos[0]==snakeArr[i].currentPos[0] && food.currentPos[1]==snakeArr[i].currentPos[1]){
+				areaSpace.splice(i,1); 
+				console.log(areaSpace.length);
+			}
+		}
+		
+	}
+	function move(event){
+		if(food && food.currentPos[0]==head.currentPos[0] && food.currentPos[1]==head.currentPos[1]){
+			food.remove();
+			food=null;
+			add();
+		}
+		var curr = [head.currentPos[0],head.currentPos[1]];
+			posArr.push(curr);
+			editPos(event.keyCode,head);
+			drawNode(head,head.currentPos);
+		
+		for(var i=1;i<snakeArr.length;i++){
+			for(var j=0;j<posArr.length-i+1;j++){
+					snakeArr[i].currentPos=posArr[j];
+					drawNode(snakeArr[i],snakeArr[i].currentPos);
+			}
+		}
+	}
+	
+	function add(){
+		target = document.createElement('div');
+		target.setAttribute("class","snake");
+		ul.appendChild(target);
+		snakeArr.push(target);
+	}
+	
+	function editPos(keycode,node){
+		
+		switch(keycode){
+			case 37: 
+				node.currentPos[0]--;
+				node.currentPos[0] = node.currentPos[0]<=0?0:node.currentPos[0];
+				break;
+			case 38:
+				node.currentPos[1]--;
+				node.currentPos[1] = node.currentPos[1]<=0?0:node.currentPos[1];
+				break;
+			case 39:
+				node.currentPos[0]++;
+				node.currentPos[0] = node.currentPos[0]>=5?4:node.currentPos[0];
+				break;
+			case 40:
+				node.currentPos[1]++;
+				node.currentPos[1] = node.currentPos[1]>=5?4:node.currentPos[1];
+				break;
+		}
+	}
+	
+	function drawNode(node,pos){
+		node.style.left = pos[0]*10+"px";
+		node.style.top = pos[1]*10+"px";
+	}
+	
+	document.addEventListener("keydown",move,false);
+	
+	function keyup(){
+		document.removeEventListener("keydown",move,false);
+		document.removeEventListener("keyup",keyup,false);
+	}
+}());
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
